@@ -10,9 +10,10 @@ export default {
   name: 'home'
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .home{
   margin-top:50px;
   text-align: center;
+   background:$mainColor;
 }
 </style>

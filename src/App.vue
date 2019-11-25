@@ -5,14 +5,17 @@
 </template>
 
 <script>
+import {getTestData} from './services/moduleA'
+
 export default {
   name: 'rootPage',
   created(){
-    console.log(process.env)
+    getTestData().then((res)=>{
+      console.log('res',res)
+    })
+    console.log('getTestData', getTestData)
   }
 }
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss" scoped></style>

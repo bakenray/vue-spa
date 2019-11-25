@@ -1,0 +1,18 @@
+$mainColor:#fff; //主色
+
+@function px($px){
+    @return $px/375 *100vw
+};
+
+@mixin fontSize($size){
+    font-weight: bold;
+    font-size: $size;
+}
+@mixin boxSize($width:100%,$height:100%){
+    width:px($width);
+    height:px($height);
+};
+%center{
+    justify-content: center;
+    align-items: center;
+};

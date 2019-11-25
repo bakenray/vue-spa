@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import moduleA from './modules/moduleA'
-import moduleB from './modules/moduleB'
 import mutations from './mutations'
 import actions from './actions'
 
@@ -15,8 +14,7 @@ export default new Vuex.Store({
   mutations,
   actions,
   modules: {
-    moduleA,
-    moduleB
+    moduleA
   },
   getters:{
     getGroups(state){
