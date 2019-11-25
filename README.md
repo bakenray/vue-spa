@@ -13,6 +13,8 @@ npm run serve
 ### 项目打包
 ```
 npm run build
+
+打包到 build目录下
 ```
 
 ### 自定义配置

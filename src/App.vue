@@ -4,4 +4,15 @@
   </div>
 </template>
 
-<style lang="scss"></style>
+<script>
+export default {
+  name: 'rootPage',
+  created(){
+    console.log(process.env)
+  }
+}
+</script>
+
+<style lang="scss">
+
+</style>
