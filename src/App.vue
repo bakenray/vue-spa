@@ -5,15 +5,13 @@
 </template>
 
 <script>
-import {getTestData} from './services/moduleA'
 
 export default {
   name: 'rootPage',
   created(){
-    getTestData().then((res)=>{
+    this.$api.getData().then((res)=>{
       console.log('res',res)
     })
-    console.log('getTestData', getTestData)
   }
 }
 </script>

@@ -14,13 +14,21 @@ const routes = [
     path: '/demo',
     name: 'demo',
     component: () => import(/* webpackChunkName: "otherPageName" */ '../components/Demo.vue')
+  },
+  {
+    path: '*',
+    name: '404',
+    component: () => import(/* webpackChunkName: "404" */ '../components/Demo.vue')
   }
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'history', 
   base: process.env.BASE_URL,
   routes
 })
+
+router.beforeEach((to,form,next)=>{})
+router.afterEach(()=>{})
 
 export default router

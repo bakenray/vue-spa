@@ -9,8 +9,8 @@ const resolve = dir =>{return path.join(__dirname, dir)}
 module.exports = {
     publicPath:'',
     outputDir:'build',
-    assetsDir:'static',
-    productionSourceMap:node_env==='production'?falase:true,
+    assetsDir:'',
+    productionSourceMap:node_env==='production'?false:true,
     css:{
         loaderOptions:{
             sass:{
@@ -22,7 +22,7 @@ module.exports = {
         proxy: {
             // 接口是 '/repos' 开头的才用代理
             '/repos/': {
-                target: 'https://api.github.com', // 目标地址
+                target:'https://api.github.com', // 目标地址
                 changeOrigin: true,              // 是否改变源地址
             }
         },
@@ -37,12 +37,10 @@ module.exports = {
                 
                 return args
             })
-
         config.resolve.alias
         .set('@',resolve('src'))
         .set('@com',resolve('src/components'))
         .set('@img',resolve('src/assets'))
-        .set('@server',resolve('src/services'))
         .set('@view',resolve('src/views'))           
     }
 }
