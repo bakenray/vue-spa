@@ -7,13 +7,13 @@
 
 <script>
 export default {
-  name: 'home'
+  name: 'home',
 }
 </script>
-<style lang="scss" scoped>
+<style lang="scss" >
 .home{
   margin-top:50px;
   text-align: center;
-   background:$mainColor;
+  background:$mainColor;
 }
 </style>
