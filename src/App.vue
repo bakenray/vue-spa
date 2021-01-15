@@ -9,6 +9,9 @@ import {Other} from './common/index'
 
 export default {
   name: 'rootPage',
+  provide:{
+    name:'Bakenray'
+  },
   created(){
 // 获取数据
     this.$api.getData().then((res)=>{

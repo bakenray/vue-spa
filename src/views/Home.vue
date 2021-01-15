@@ -17,11 +17,15 @@ import coms from '@com/Demo.vue'
 
 export default {
   name: 'home',
+  inject:['name'],
   components:{coms},
   methods:{
     freeClick(e){
       alert(`自定义事件参数 ${e}`)
     }
+  },
+  created(){
+    console.log('provide传递过来的数据是：',this.name)
   }
 }
 </script>
