@@ -36,6 +36,7 @@ module.exports = {
                 
                 return args
             })
+            
         config.resolve.alias
         .set('@',resolve('src'))
         .set('@com',resolve('src/components'))

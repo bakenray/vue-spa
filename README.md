@@ -6,6 +6,13 @@
 npm install
 ```
 
+如果node-sass安装失败，则单独使用镜像下载node-sass
+
+```
+npm install node-sass -D --sass_binary_site=https://npm.taobao.org/mirrors/node-sass
+```
+
+
 ### 运行项目
 ```
 npm run serve
