@@ -1,10 +1,9 @@
 const configs = require('./config/index')
 const merge = require('webpack-merge')
 const node_env = process.env.NODE_ENV
-const cfg = node_env ==='development'?configs.dev.env:configs.dev.env
-
+const cfg = node_env ==='production'?configs.build.env:configs.dev.env
 const path = require('path')
-const resolve = dir =>{return path.join(__dirname, dir)}
+const resolve = dir =>{ return path.join(__dirname, dir) }
 
 module.exports = {
     publicPath:'./',
