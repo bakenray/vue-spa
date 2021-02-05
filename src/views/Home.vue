@@ -2,41 +2,45 @@
   <div class="home">
       <img alt="Vue logo" src="../assets/logo.png">
       <h1>vue项目最小配置</h1>
-      <ul class="row">
-        <li v-for="item in navs" :key="item.id">{{item.name}}</li>
+      <ul class="row center">
+        <li v-for="item in navs" :key="item.id" @click="current = item.path">{{item.name}}</li>
       </ul>
-      <!-- <Slot :disabled="true" @free-click="freeClick"> 
-        我是普通插槽的文字
-        <p slot="slot_1">我是具名插槽的文字</p>
-      </Slot> -->
 
-      <!-- <Public/> -->
+      <template v-if="current === 'slot'">
+        <Slot :disabled="true" @free-click="freeClick"> 
+          我是普通插槽的文字
+          <p slot="slot_1">我是具名插槽的文字</p>
+        </Slot>
+      </template>
+      <template v-else-if="current === 'public'">
+        <Public/>
+      </template>
 
   </div>
 </template>
 
 <script>
 
-// import Slot from '@com/Slot.vue'
+import Slot from '@com/Slot.vue'
 
 export default {
   name: 'home',
   inject:['name'],
-  // components:{Slot},
+  components:{Slot},
   data(){
     return{
+      current:'',
       navs:[
         {
           id:1,
           name:'插槽',
-          path:'/slot'
+          path:'slot'
         },
         {
           id:2,
-          name:'组件',
-          path:'/slot'
-        },
-
+          name:'全局组件',
+          path:'public'
+        }
       ]
     }
   },
@@ -56,8 +60,15 @@ export default {
   text-align: center;
   background:$mainColor;
   >ul{
+    margin:50px 0;
     >li{
       margin:10px;
+      cursor: pointer;
+      color:blue;
+      transition: text-shadow .35s ease;
+      &:hover{
+        text-shadow: 0 4px 10px rgba(0,0,0,.25);
+      }
     }
   }
 }

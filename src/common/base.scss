@@ -29,3 +29,6 @@ $mainColor:#fff; //主色
     display: flex;
     flex-direction: column;
 }
+.center{
+    @extend %center;
+}
