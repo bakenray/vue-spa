@@ -2,23 +2,44 @@
   <div class="home">
       <img alt="Vue logo" src="../assets/logo.png">
       <h1>vue项目最小配置</h1>
-
-      <coms :disabled="true" @free-click="freeClick"> 
+      <ul class="row">
+        <li v-for="item in navs" :key="item.id">{{item.name}}</li>
+      </ul>
+      <!-- <Slot :disabled="true" @free-click="freeClick"> 
         我是普通插槽的文字
         <p slot="slot_1">我是具名插槽的文字</p>
-      </coms>
+      </Slot> -->
+
+      <!-- <Public/> -->
 
   </div>
 </template>
 
 <script>
 
-import coms from '@com/Demo.vue'
+// import Slot from '@com/Slot.vue'
 
 export default {
   name: 'home',
   inject:['name'],
-  components:{coms},
+  // components:{Slot},
+  data(){
+    return{
+      navs:[
+        {
+          id:1,
+          name:'插槽',
+          path:'/slot'
+        },
+        {
+          id:2,
+          name:'组件',
+          path:'/slot'
+        },
+
+      ]
+    }
+  },
   methods:{
     freeClick(e){
       alert(`自定义事件参数 ${e}`)
@@ -34,5 +55,10 @@ export default {
   margin-top:50px;
   text-align: center;
   background:$mainColor;
+  >ul{
+    >li{
+      margin:10px;
+    }
+  }
 }
 </style>

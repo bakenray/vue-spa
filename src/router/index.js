@@ -13,12 +13,12 @@ const routes = [
   {
     path: '/demo',
     name: 'demo',
-    component: () => import(/* webpackChunkName: "otherPageName" */ '../components/Demo.vue')
+    component: () => import(/* webpackChunkName: "otherPageName" */ '../components/Slot.vue')
   },
   {
     path: '*',
     name: '404',
-    component: () => import(/* webpackChunkName: "404" */ '../components/Demo.vue')
+    component: () => import(/* webpackChunkName: "404" */ '../components/Slot.vue')
   }
 ]
 
